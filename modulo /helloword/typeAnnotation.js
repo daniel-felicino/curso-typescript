@@ -51,3 +51,73 @@ function animaislista(numerodeanimais) {
     }
 }
 animaislista(animais);
+//-------------------------------
+//tuple
+let pessoas;
+pessoas = ['daniel', 'silva', 'silva', 'silva', 'silva', 'silva', 'silva', 33];
+console.log(...pessoas);
+console.log(pessoas);
+let pessoas2;
+pessoas2 = ['daniel', 'rafael', 'amanda', 'augusto', 'cida', 'roberto', 'silva'];
+let pessoas3 = [3, ...pessoas2];
+console.log(...pessoas3);
+function pessoaslista(nome, idade) {
+    return [...nome, ...idade];
+}
+let resultado = pessoaslista(['daniel'], [33]);
+console.log(resultado);
+function listarnome(...nome) {
+    return [...nome];
+}
+console.log(listarnome('daniel', 'feliciano', 'silva'));
+console.log(listarnome('daniel', 'daniel'));
+var Idioma;
+(function (Idioma) {
+    Idioma[Idioma["Portugues"] = 0] = "Portugues";
+    Idioma[Idioma["ingles"] = 1] = "ingles";
+    Idioma[Idioma["japones"] = 2] = "japones";
+})(Idioma || (Idioma = {}));
+console.log(Idioma);
+var dias;
+(function (dias) {
+    dias["segunda"] = "seg";
+    dias["terca"] = "ter";
+    dias["quarta"] = "quar";
+    dias["quinta"] = "quin";
+    dias["sexta"] = "sex";
+    dias["sabado"] = "sabado";
+    dias["domingo"] = "dom";
+})(dias || (dias = {}));
+console.log(dias.segunda);
+//VOID-------------------------------
+function loginError(erroMensagem) {
+    console.log(erroMensagem);
+}
+loginError('erro');
+const loginErro2 = (errorMesagem) => {
+    console.log(errorMesagem);
+};
+loginErro2("erro login 2");
+//NULL----------------
+var testeNull = null;
+console.log(testeNull);
+console.log(typeof (testeNull), 'exemplo null');
+//Undefind--------
+var testeundefined;
+console.log(testeundefined);
+console.log(typeof (testeundefined), 'exemplo undefind');
+//NEVER----------
+// function erro(mensagem: string): never {
+//     throw new Error(mensagem)
+// }
+// console.log(erro('error 404'))
+// function rejectError() {
+//     return Error
+//         ('erros 2 exemplo')
+// }
+// console.log(rejectError())
+// var texto:string = 'daniel fronend'
+// console.log(texto.replace('daniel' ,'beckend'))
+// var pessoasEmpresa: [string,number,true]= 
+// pessoasEmpresa = ['daniel',33,true]
+// console.log(pessoasEmpresa.toString().replace('daniel','foi')) 

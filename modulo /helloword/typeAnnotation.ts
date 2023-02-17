@@ -61,11 +61,108 @@ function listafrutas(frutaslista: string[]) {
 }
 listafrutas(frutas)
 
-function animaislista(numerodeanimais:string[]) {
+function animaislista(numerodeanimais: string[]) {
     for (let i = 0; i < numerodeanimais.length; i++) {
-       
-        console.log( animais[i])
-        
+
+        console.log(animais[i])
+
     }
 }
 animaislista(animais)
+
+//-------------------------------
+//tuple
+
+let pessoas: [string, ...string[], number]
+pessoas = ['daniel', 'silva', 'silva', 'silva', 'silva', 'silva', 'silva', 33]
+console.log(...pessoas)
+console.log(pessoas)
+let pessoas2: [string, ...string[]]
+pessoas2 = ['daniel', 'rafael', 'amanda', 'augusto', 'cida', 'roberto', 'silva']
+let pessoas3: [number, ...string[]] = [3, ...pessoas2]
+console.log(...pessoas3)
+
+function pessoaslista(nome: string[], idade: number[]) {
+
+    return [...nome, ...idade]
+}
+let resultado = pessoaslista(['daniel'], [33])
+console.log(resultado)
+
+type Nome =
+    | [primeiroNome: string, segudoNome: string]
+    | [primeiroNome: string, nomedomeio: string, segudoNome: string]
+
+function listarnome(...nome: Nome) {
+    return [...nome]
+}
+console.log(listarnome('daniel', 'feliciano', 'silva'))
+console.log(listarnome('daniel', 'daniel'))
+
+enum Idioma {
+
+    Portugues,
+    ingles,
+    japones
+}
+console.log(Idioma)
+
+enum dias {
+
+    segunda = 'seg',
+    terca = 'ter',
+    quarta = 'quar',
+    quinta = 'quin',
+    sexta = 'sex',
+    sabado = 'sabado',
+    domingo = 'dom'
+}
+console.log(dias.segunda)
+
+//VOID-------------------------------
+
+function loginError(erroMensagem: string) {
+    console.log(erroMensagem)
+}
+loginError('erro')
+
+const loginErro2 = (errorMesagem: string) => {
+
+    console.log(errorMesagem)
+}
+loginErro2("erro login 2")
+
+//NULL----------------
+
+var testeNull = null
+console.log(testeNull)
+console.log(typeof (testeNull), 'exemplo null')
+
+//Undefind--------
+var testeundefined;
+console.log(testeundefined)
+console.log(typeof (testeundefined), 'exemplo undefind')
+
+
+//NEVER----------
+
+// function erro(mensagem: string): never {
+
+//     throw new Error(mensagem)
+// }
+// console.log(erro('error 404'))
+
+// function rejectError() {
+
+//     return Error
+//         ('erros 2 exemplo')
+// }
+// console.log(rejectError())
+
+// var texto:string = 'daniel fronend'
+// console.log(texto.replace('daniel' ,'beckend'))
+
+// var pessoasEmpresa: [string,number,true]= 
+// pessoasEmpresa = ['daniel',33,true]
+
+// console.log(pessoasEmpresa.toString().replace('daniel','foi')) 
