@@ -76,7 +76,7 @@ interface cadastrosEmpresa {
     nome:string,
     idade:number,
     funcao:string,
-    email ?: string //não é obrigatorio ter 
+    email ?: string //não é obrigatorio ter essa informação
 }
 function empresa(patametro:cadastrosEmpresa){
     return 'Nome' + ':' + 
@@ -105,3 +105,46 @@ sobrenome:'Silva',
 idade:33
 }
 console.log(parametro)
+
+
+let number = 5.555
+console.log(number.toExponential())
+
+let number2 = 5.56987456
+console.log(number2.toFixed(3))
+console.log(number2)
+console.log('TO STRING' + ' '+ number2.toString())
+console.log('TO value' + ' '+ number2.valueOf())
+console.log('typeOf' + ' '+ typeof number2)
+let string = "daniel"
+console.log('string valueOf' + string.valueOf())
+
+let novadata = new Date()
+console.log(novadata.toLocaleString())
+
+let novadata2 = new Date()
+console.log(novadata2.toLocaleString('pt-br'))
+
+let myNumber: number = 123;
+console.log(myNumber.toString()) 
+
+// GENERIC OBJECT--------------------------------------------------------
+
+type usuario = {
+    nome:string,
+    email:string
+}
+type admin = {
+    nome:string,
+    email:string
+    admin:true
+}
+const user:usuario = {nome:'daniel',email:'daniel@hotmail'}
+const userAdmin:admin = {nome:'daniel',email:'daniel@hotmail',admin:true}
+
+function resultadoUsuario<T>( user:T ):T{
+return (
+   user)
+}
+console.log(resultadoUsuario<usuario>(user))
+console.log(resultadoUsuario<admin>(userAdmin))

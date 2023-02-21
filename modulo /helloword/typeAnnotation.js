@@ -54,7 +54,7 @@ animaislista(animais);
 //-------------------------------
 //tuple
 let pessoas;
-pessoas = ['daniel', 'silva', 'silva', 'silva', 'silva', 'silva', 'silva', 33];
+pessoas = ['joão', 'Maria', 'Sara', 'fernando', 'Duda', 33];
 console.log(...pessoas);
 console.log(pessoas);
 let pessoas2;
@@ -121,3 +121,15 @@ console.log(typeof (testeundefined), 'exemplo undefind');
 // var pessoasEmpresa: [string,number,true]= 
 // pessoasEmpresa = ['daniel',33,true]
 // console.log(pessoasEmpresa.toString().replace('daniel','foi')) 
+const meuVeiculo = {
+    marca: 'Ford',
+    modelo: 'Mustang',
+    cor: 'red'
+};
+const atualizarVeiculo = {
+    tipo: 'carro',
+    ano: 2021,
+    cor: 'yellow'
+};
+const atualização = Object.assign(Object.assign({}, meuVeiculo), atualizarVeiculo);
+console.log(atualização);

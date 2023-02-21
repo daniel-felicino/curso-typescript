@@ -74,10 +74,15 @@ animaislista(animais)
 //tuple
 
 let pessoas: [string, ...string[], number]
-pessoas = ['daniel', 'silva', 'silva', 'silva', 'silva', 'silva', 'silva', 33]
+
+pessoas = ['joão', 'Maria', 'Sara', 'fernando', 'Duda', 33]
+
 console.log(...pessoas)
+
 console.log(pessoas)
+
 let pessoas2: [string, ...string[]]
+
 pessoas2 = ['daniel', 'rafael', 'amanda', 'augusto', 'cida', 'roberto', 'silva']
 let pessoas3: [number, ...string[]] = [3, ...pessoas2]
 console.log(...pessoas3)
@@ -166,3 +171,19 @@ console.log(typeof (testeundefined), 'exemplo undefind')
 // pessoasEmpresa = ['daniel',33,true]
 
 // console.log(pessoasEmpresa.toString().replace('daniel','foi')) 
+
+
+const meuVeiculo = {
+    marca: 'Ford',
+    modelo: 'Mustang',
+    cor: 'red'
+}
+
+const atualizarVeiculo = {
+    tipo: 'carro',
+    ano: 2021,
+    cor: 'yellow'
+}
+const atualização = { ...meuVeiculo, ...atualizarVeiculo }
+console.log(atualização)
+
