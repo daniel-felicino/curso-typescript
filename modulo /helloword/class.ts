@@ -67,7 +67,7 @@ class estudanteCursoAdd extends estudanteCurso {
     private nomeCurso: string;
 
     constructor(parametroNome: string, parametroSobrenome: string, parametroNumeroId: number, parametroCurso: string) {
-        
+
         super(//parametros que estão fora dessa class devem ser chamado no super
             parametroNome,
             parametroSobrenome,
@@ -86,3 +86,29 @@ const passarValoresCurso = new estudanteCursoAdd('Daniel',
     159357826458, 'FrontEnd')
 
 console.log(passarValoresCurso.metodoCurso())
+
+
+
+//Modificadores de acesso Readonly
+
+class dataNacimento {
+    readonly data:Date;
+
+    constructor(parametroData:Date){
+
+        this.data = parametroData
+    }
+}
+const minhaData = new dataNacimento(new Date(1989,8,7))
+console.log(minhaData)
+
+//segundo jeito de chamar readonly
+class dataNacimento2 {
+
+    constructor( readonly parametroData:Date){
+
+        this.parametroData = parametroData
+    }
+}
+const minhaData2 = new dataNacimento(new Date(2000,8,7))
+console.log(minhaData2)
