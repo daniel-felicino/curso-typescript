@@ -34,7 +34,7 @@ acessoArray({nome:'Daniel',sobrenome:"Silva",cidade:'Uberaba'})
 // console.log(animais.splice(1,0,'daniel'))
 // console.log(animais.splice(2,2))
 animais.unshift('daniel')
-console.log(animais)
+console.log( animais)
 
 // console.log(animais.slice(1,4))
 
