@@ -48,9 +48,10 @@ class funcionario{
 
 const funcionario1 = new funcionario('daniel','silva','dev')
 const funcionario2 = new funcionario('daniel','silva','dev')
-
+ 
 console.log(funcionario.contratacao)
 
+//STATIC
 type raca = 'pastor alemão' |' budog' | 'vira lata'|'pudow'
 class racasdecao {
    nome:string;

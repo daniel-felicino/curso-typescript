@@ -1,10 +1,4 @@
 "use strict";
-function acessoArray(paremetro) {
-    for (var i = 0; i < acessoArray.length; i++) {
-        console.log(`Os paramentros são : ${paremetro} `);
-    }
-}
-acessoArray({ nome: 'Daniel', sobrenome: "Silva", cidade: 'Uberaba' });
 var animais = ['abelha', 'cão', 'gato', 'elefante', 'baleia'];
 // var insetos:string[] = ['pernelongo','barata','mosca','formiga','aranha']
 // animais.pop()

@@ -92,23 +92,59 @@ console.log(passarValoresCurso.metodoCurso())
 //Modificadores de acesso Readonly
 
 class dataNacimento {
-    readonly data:Date;
+    readonly data: Date;
 
-    constructor(parametroData:Date){
+    constructor(parametroData: Date) {
 
         this.data = parametroData
     }
 }
-const minhaData = new dataNacimento(new Date(1989,8,7))
+const minhaData = new dataNacimento(new Date(1989, 8, 7))
 console.log(minhaData)
 
 //segundo jeito de chamar readonly
 class dataNacimento2 {
 
-    constructor( readonly parametroData:Date){
+    constructor(readonly parametroData: Date) {
 
         this.parametroData = parametroData
     }
 }
-const minhaData2 = new dataNacimento(new Date(2000,8,7))
+const minhaData2 = new dataNacimento(new Date(2000, 8, 7))
 console.log(minhaData2)
+
+//static 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class funcionarios {
+
+    static contratação = 0;
+
+    constructor(
+        private nome: string,
+        private sobrenome: string,
+        private titulo: string
+    ) {
+
+        //para chamar o metodo static deve contar o nome da class  + a propriedade
+
+        funcionarios.contratação++
+
+    }
+}
+var novoFuncionario = new funcionarios('daniel', 'silva', 'dev')
+console.log(novoFuncionario)
+console.log(`Numero de funcionario é : ${funcionarios.contratação}`)

@@ -1,20 +1,3 @@
-type array = {
-
-  nome: string,
-  sobrenome: string,
-  cidade: string,
-}
-
-function acessoArray(paremetro: array) {
-
-  for (var  i = 0; i < acessoArray.length; i++) {
-
-    console.log(`Os paramentros são : ${paremetro} `)
-  }
-}
-acessoArray({nome:'Daniel',sobrenome:"Silva",cidade:'Uberaba'})
-
-
  var animais:string[] = ['abelha','cão','gato','elefante','baleia']
 // var insetos:string[] = ['pernelongo','barata','mosca','formiga','aranha']
 
