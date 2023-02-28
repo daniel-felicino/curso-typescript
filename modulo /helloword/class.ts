@@ -115,20 +115,6 @@ console.log(minhaData2)
 
 //static 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class funcionarios {
 
     static contratação = 0;
@@ -148,3 +134,76 @@ class funcionarios {
 var novoFuncionario = new funcionarios('daniel', 'silva', 'dev')
 console.log(novoFuncionario)
 console.log(`Numero de funcionario é : ${funcionarios.contratação}`)
+
+
+//Class abstract
+export { }
+abstract class funcionario {
+    constructor(private parametroNome: string, private paramentroSobrenome: string) {
+
+    }
+    abstract funcionarioSalario(): number
+
+    get retornarNomeFuncionario(): string {
+
+        return `${this.parametroNome} ${this.paramentroSobrenome}`
+    }
+    emitirNota(): string {
+        return `${this.retornarNomeFuncionario} - Salario ${this.funcionarioSalario()}`
+    }
+}
+
+class funcionariosCLT extends funcionario {
+
+    constructor(parametroNome: string, paramentroSobrenome: string, private paramentrosalarioclt: number) {
+
+        super(parametroNome, paramentroSobrenome)
+    }
+
+    funcionarioSalario(): number {
+        return this.paramentrosalarioclt
+    }
+}
+
+class funcionariorPJ extends funcionario {
+    constructor(parametroNome: string, paramentroSobrenome: string,
+        private paramentrosalarioPJ: number, private salariohora: number) {
+        super(parametroNome, paramentroSobrenome)
+    }
+
+    funcionarioSalario(): number {
+        return this.paramentrosalarioPJ * this.salariohora
+    }
+}
+
+const daniel = new funcionariosCLT('daniel', 'silva', 5000)
+const silva = new funcionariorPJ('daniel', 'silva', 150, 160)
+console.log(silva.emitirNota())
+
+
+abstract class animais {
+    constructor(private paramentroNomeAnimal: string, private paramentroRaca: string) {
+
+    }
+
+    abstract idade(): number
+
+    get dadosAnimais(): string {
+
+        return `${this.paramentroNomeAnimal} - ${this.paramentroRaca} `
+    }
+    emitirdadosAnimal() {
+        return `${this.dadosAnimais} - ${this.idade()}`
+    }
+}
+
+class pegandoDadosAnimal extends animais {
+    constructor(paramentroNomeAnimal: string, paramentroRaca: string, private idadeAnimail: number) {
+        super(paramentroNomeAnimal, paramentroRaca)
+    }
+    idade(): number {
+        return this.idadeAnimail
+    }
+}
+const novoanimal = new pegandoDadosAnimal('Duda', 'viralata', 5)
+console.log(novoanimal.emitirdadosAnimal())
