@@ -74,3 +74,81 @@ public dadosdoanimal(){
 const caovendido = new racasdecao('Duda',4,[' budog'])
 const caovendido2 = new racasdecao('Raf',5,['vira lata'])
 console.log(caovendido.dadosdoanimal())
+
+//----------------------------------------
+
+interface caox{
+  nome:string
+  idade:number
+}
+interface animalx {
+  peso:number
+  valor:number
+}
+
+interface dadosdoanimaalx extends caox,animalx  {
+
+raca:string
+
+}
+
+const resutado: dadosdoanimaalx = {
+  nome:'duda',
+  idade:2,
+  peso:5,
+  valor:25,
+  raca:'vira'
+}
+
+console.log(resutado)
+
+
+
+//OMIT----------------------------------------
+
+interface funcionario3 {
+  id:number
+  nome:string,
+  idade:number
+}
+ interface x extends Omit<funcionario3,'id'| 'idade'>{
+
+id:string
+nome:string
+idade:string
+ }
+
+ const resuldadodoomit : x = {
+
+  id:"1",
+  nome:'daniel',
+  idade:'33'
+ }
+ console.log(resuldadodoomit)
+
+
+ interface carros3{
+  ano:number,
+  modelo:string,
+
+ }
+ interface comprador {
+  nome:string,
+  idade:number
+ }
+
+ interface compradorCarro extends carros3,comprador 
+{
+  valor:number
+}
+
+const recebeOsValores: compradorCarro ={
+  ano:2022,
+  modelo:'Prisma',
+  nome:'Daniel',
+  idade:33,
+  valor:52000
+
+}
+
+console.log(recebeOsValores)

@@ -9,30 +9,31 @@
 export { dadosPessoais1 }
 interface dadosPessoais1 {
     nome: string,
-    sobrenome:string
+    sobrenome: string
 }
-function exibir (dadosPessoais: dadosPessoais1){
+function exibir(dadosPessoais: dadosPessoais1) {
 
     return `Nome...${dadosPessoais.nome} Sobrenome: ${dadosPessoais.sobrenome}`
 }
 
-const nomes =  {
-    nome:'daniel',
-    sobrenome:'silva'
+const nomes = {
+    nome: 'daniel',
+    sobrenome: 'silva'
 }
 
 console.log(exibir(nomes))
 
-interface carros{
+interface carros {
 
-    readonly modelo:string,
-    ano:number,
-
+    readonly modelo: string,
+    ano: number,
+    valor?: number
 }
 
 const carro: carros = {
-    modelo : 'ferrari',
-    ano :1979
+    modelo: 'ferrari',
+    ano: 1979,
+    valor: 12000
 }
 
 // carro.modelo = "fusca "
@@ -42,31 +43,31 @@ console.log(carro)
 
 interface Animal {
 
-    nome:string;
-    idade:number;
-    estavivo:boolean;
-    comer(tipocomida:string):void;
+    nome: string;
+    idade: number;
+    estavivo: boolean;
+    comer(tipocomida: string): void;
 }
 
 
 
-class gato implements Animal{
-    nome:string;
-    idade:number;
-    estavivo:boolean;
+class gato implements Animal {
+    nome: string;
+    idade: number;
+    estavivo: boolean;
 
-constructor(parametroNome:string,parametroIdade:number,parametroEstavivo:boolean){
-    this.nome = parametroNome;
-    this.idade = parametroIdade;
-    this.estavivo = parametroEstavivo;
-}
-comer(tipodecomida: string):void {
-console.log(`O gato ${this.nome} está comendo ${tipodecomida}`);
-}
+    constructor(parametroNome: string, parametroIdade: number, parametroEstavivo: boolean) {
+        this.nome = parametroNome;
+        this.idade = parametroIdade;
+        this.estavivo = parametroEstavivo;
+    }
+    comer(tipodecomida: string): void {
+        console.log(`O gato ${this.nome} está comendo ${tipodecomida}`);
+    }
 
 }
 
-const montar = new gato('toto',10,true)
+const montar = new gato('toto', 10, true)
 console.log(montar)
 montar.comer('ração')
 
